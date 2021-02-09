@@ -10,9 +10,6 @@ server = 'smtp.gmail.com'
 stock_dates_list = None
 email_subject = None
 
-
-
-
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
@@ -26,6 +23,7 @@ stock_parameters = {
     'symbol': STOCK_NAME,
     'apikey': STOCK_API_KEY,
 }
+
 
 def send_news(message):
     global sender, receiver, server
@@ -60,7 +58,6 @@ stock_news_parameters = {
     'apiKey': NEWS_API,
     'language': 'en',
     'qInTitle': COMPANY_NAME,
-    'from': stock_dates_list[3],
 }
 
 
@@ -95,5 +92,5 @@ def get_news():
 
 
 if check_stock():
+    stock_news_parameters['from'] = str(stock_dates_list[3])
     send_news(get_news())
-
