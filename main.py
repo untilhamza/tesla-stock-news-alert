@@ -60,7 +60,7 @@ stock_news_parameters = {
     'apiKey': NEWS_API,
     'language': 'en',
     'qInTitle': COMPANY_NAME,
-    'to': '2021-02-09',
+    'from': stock_dates_list[3],
 }
 
 
